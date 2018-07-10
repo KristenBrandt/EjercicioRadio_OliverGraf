@@ -20,14 +20,16 @@ class Radio(    var encendido: Boolean = false,
     }
 
     fun cambiarSintonia(){ if (sintonia.equals("Fm")){
-        sintonia = "Am".toString()
+        sintonia = "Am"
     }else{
-        sintonia = "Fm".toString()
+        sintonia = "Fm"
     }}
     fun encenderApagar(){
         if(encendido == false){
+            println("Acaba de encender la radio")
             encendido = true
         }else{
+            println("Acaba de apagar la radio")
             encendido = false
         }
 
@@ -46,11 +48,13 @@ class Radio(    var encendido: Boolean = false,
     fun menu():String{
         return """
             ¿Cual de las siguientes acciones desea tomar?
+            Ingrese el numero de la opcion que quiere(1-6)
             1.Cambiar de sintonia
-            2.Subir o bajar volumen
-            3.Cambiar entre Fm y Am
-            4.Encender o apagar la radio
-            5.Salir del programa
-            """
+            2.Subir volumen
+            3.Bajar volumen
+            4.Cambiar entre Fm y Am
+            5.Encender o apagar la radio
+            6.Salir del programa
+            """.trimIndent()
     }
 }
